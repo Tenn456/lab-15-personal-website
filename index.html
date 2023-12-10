@@ -12,12 +12,7 @@
     </style>
 </head>
 <body onload="draw()" bgcolor="#A3A7BF">
-	<div class="hero-image">
-		<div class="hero-text">
-			<h1>Tenjing Norsang</h1>
-			<h2>Game Designer</h2>
-		</div>
-	</div>
+	<div class="hero-image"></div>
 
 	<div id="navbar">
 		<a href="index.html">Home</a>
@@ -26,45 +21,48 @@
 		<a href="contact.html">Contact</a>
 	</div>
 
-	<div class="square" id="first">
-		<h2>Home</h2>
-		<canvas id="sketch" width="480" height="720"></canvas>
+		<h1>Home</h1>
+		
 
-		<script>
+		<div class="home">
+			<canvas id="sketch" width="400" height="300"></canvas>
+			<script>
+				var sketch;
+				var context;
+				var circle;
+				var dx = 2;
+				var fps = 2;
+				var animation;
 
-			var sketch;
-			var context;
-			var circle;
-			var dx = 2;
-			var fps = 2;
-			var animation;
-
-			function draw() {
-			 	sketch = document.getElementById('sketch');
-				context = sketch.getContext("2d");
-				circle = {'x':25, 'y':sketch.offsetHeight / 2, 'r':25};
-				var animation = setInterval(animate, fps);
-			}
-
-			function animate(){
-				context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
-				draw_circle(circle.x, circle.y, circle.r);
-				circle.x = circle.x + dx;
-
-				if(circle.x > sketch.offsetWidth - dx - circle.r || circle.x < circle.r - dx){
-					dx = dx * -1;
+				function draw() {
+				 	sketch = document.getElementById('sketch');
+					context = sketch.getContext("2d");
+					circle = {'x':25, 'y':sketch.offsetHeight / 2, 'r':25};
+					var animation = setInterval(animate, fps);
 				}
-			}
 
-			function draw_circle(x, y, r){
-				context.fillStyle = "#000000";
-				context.beginPath();
-				context.arc(circle.x, circle.y, circle.r, 0, 2 * Math.PI);
-				context.closePath();
-				context.fill();
-			}
-		</script>
-	</div>
+				function animate(){
+					context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+					draw_circle(circle.x, circle.y, circle.r);
+					circle.x = circle.x + dx;
+
+					if(circle.x > sketch.offsetWidth - dx - circle.r || circle.x < circle.r - dx){
+						dx = dx * -1;
+					}
+				}
+
+				function draw_circle(x, y, r){
+					context.fillStyle = "#000000";
+					context.beginPath();
+					context.arc(circle.x, circle.y, circle.r, 0, 2 * Math.PI);
+					context.closePath();
+					context.fill();
+				}
+			</script>
+			<h3>Welcome to my website. Here is a bouncing ball.</h3>
+		</div>
+
+		
 	<script src="navbar.v01.js"></script>
 </body>
 </html>
