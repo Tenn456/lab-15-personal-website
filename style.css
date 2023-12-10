@@ -1,6 +1,7 @@
 /*universal properties */
 body, html {
 	height: 100%;
+	font-family: 'Source Sans 3';
 	color: white;
 }
 
@@ -48,6 +49,7 @@ body, html {
 
 h1 {
 	text-align: center;
+	font-family: 'Oswald';
 }
 
 .home {
@@ -96,7 +98,7 @@ h1 {
 	width: 30%;
   word-wrap: break-word;
   overflow: auto;
-  text-align: center; 
+  text-align: left;
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -113,7 +115,7 @@ h1 {
 	width: 30%;
   word-wrap: break-word;
   overflow: auto;
-  text-align: center;
+  text-align: left;
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -126,13 +128,11 @@ h1 {
   transform: translate(0, -300px);
 }
 
-
-
 .fourthgame {
 	width: 30%;
   word-wrap: break-word;
   overflow: auto;
-  text-align: center;
+  text-align: left;
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -188,4 +188,26 @@ h1 {
 .line3 {
 	width: 700px;
 	transform: translate(0, -650px);
+}
+
+.zelda {
+	width: 400px;
+	display: block;
+	position: absolute;
+	transform: translate(800px, -650px);
+}
+
+.spiderman {
+	width: 500px;
+	display: block;
+	position: absolute;
+	transform: translate(1210px, -650px);
+}
+
+.sonic {
+	width: 500px;
+	height: 326px;
+	display: block;
+	position: absolute;
+	transform: translate(1210px, -360px);
 }
