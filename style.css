@@ -20,11 +20,17 @@ body, html {
 	z-index: 1;
 }
 
+#navbar h1{
+  float: left;
+  margin-left: 20px;    /* if you want it vertically middle of the navbar. */
+}
+
 #navbar a {
-	float: left;
+  float: right;
 	display: block;
+  margin-top: 25px;
+  margin-right: 10px;
 	color: #f2f2f2;
-	font-family: 'Major Mono Display', monospace;
 	text-align: center;
   padding: 14px;
   text-decoration: none;
@@ -168,7 +174,7 @@ h1 {
 }
 .img3 {
  	height: 60%;
- 	transform: translate(900px, -850px);
+ 	transform: translate(825px, -850px);
 }
 .img4 {
  	height: 60%;
