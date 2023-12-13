@@ -28,7 +28,7 @@
 		
 
 		<div class="home">
-			<canvas id="sketch" width="400" height="300"></canvas>
+			<canvas id="sketch" width="400" height="150"></canvas>
 			<script>
 				var sketch;
 				var context;
@@ -36,33 +36,46 @@
 				var dx = 2;
 				var fps = 2;
 				var animation;
+				var r = 66;
+				var g = 135;
+				var b = 245;
 
 				function draw() {
 				 	sketch = document.getElementById('sketch');
 					context = sketch.getContext("2d");
 					circle = {'x':25, 'y':sketch.offsetHeight / 2, 'r':25};
+					context.fillStyle = "rgba(255, 255, 255, 0.2)";
+					context.fillRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
 					var animation = setInterval(animate, fps);
+
 				}
 
 				function animate(){
-					context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+					context.fillStyle = "rgba(255, 255, 255, 0)"
+					context.fillRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+
+					context.fillStyle = "rgb(" + r + "," + g + "," + b +")";
 					draw_circle(circle.x, circle.y, circle.r);
+					context.fill();
+
 					circle.x = circle.x + dx;
+					console.log(r, g, b);
 
 					if(circle.x > sketch.offsetWidth - dx - circle.r || circle.x < circle.r - dx){
 						dx = dx * -1;
+						r = Math.floor((Math.random() * 255) + 1);
+						g = Math.floor((Math.random() * 255) + 1);
+						b = Math.floor((Math.random() * 255) + 1);
 					}
 				}
 
 				function draw_circle(x, y, r){
-					context.fillStyle = "#000000";
 					context.beginPath();
 					context.arc(circle.x, circle.y, circle.r, 0, 2 * Math.PI);
-					context.closePath();
-					context.fill();
+					context.closePath();	
 				}
 			</script>
-			<h3>Welcome to my website. Here is a bouncing ball.</h3>
+			<h3>Welcome to Tenjing Norsang's website.</h3>
 		</div>
 
 		
